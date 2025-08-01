@@ -37,6 +37,23 @@ body {
     margin-bottom: 30px;
 }
 
+/* Ini supaya sisa teks "yukun" tidak hilang tapi invisible */
+#hidden-rest {
+    visibility: hidden;
+}
+
+/* Kursor "_" untuk judul */
+.underscore-cursor {
+    display: inline-block;
+    font-weight: bold;
+    animation: blink-underscore 0.8s steps(1) infinite;
+}
+
+@keyframes blink-underscore {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
 /* Navigasi slide */
 .slides {
     display: flex;
@@ -106,18 +123,6 @@ body {
     50% { border-color: var(--text); }
 }
 
-/* Kursor "_" untuk Judul */
-.underscore-cursor {
-    display: inline-block;
-    font-weight: bold;
-    animation: blink-underscore 0.8s steps(1) infinite;
-}
-
-@keyframes blink-underscore {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-}
-
 /* Slide-up untuk konten siswa */
 .slide-up {
     animation: slideUp 0.5s ease-out forwards;
@@ -131,4 +136,3 @@ body {
         transform: translateY(0);
     }
 }
-
