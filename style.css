@@ -167,17 +167,17 @@ body {
 /* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
   body {
-    padding: 25px 20px;
+    padding: 30px 25px;
   }
 
   .header-bar {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
   }
 
   .title {
-    font-size: 48px;  /* diperbesar dari 36px */
+    font-size: 64px;  /* lebih besar */
     order: 1;
     width: 100%;
     text-align: center;
@@ -188,8 +188,8 @@ body {
     order: 2;
     width: 100%;
     justify-content: center;
-    gap: 20px;
-    font-size: 20px; /* diperbesar dari 16px */
+    gap: 25px;
+    font-size: 28px; /* lebih besar */
     position: relative;
   }
 
@@ -199,6 +199,7 @@ body {
 
   .content {
     max-width: 100%;
-    padding: 30px; /* diperbesar dari 20px */
+    padding: 40px; /* lebih besar */
+    font-size: 18px; /* tambah ukuran font konten */
   }
 }
