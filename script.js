@@ -1,5 +1,5 @@
 const titleElement = document.getElementById('typed-title');
-const titleText = "M"; // hanya M yang diketik
+const titleText = "yukun"; // animasi ketik hanya untuk 'yukun'
 let index = 0;
 
 function typeTitleOnce() {
@@ -10,14 +10,13 @@ function typeTitleOnce() {
 }
 typeTitleOnce();
 
-// Fungsi menampilkan konten dengan animasi
 function showSlide(slide) {
     const content = document.getElementById('content');
 
     content.classList.add('fade-out');
 
     setTimeout(() => {
-        content.className = 'content'; // reset class agar animasi bisa diulang
+        content.className = 'content'; // reset class
 
         if (slide === 'pengenalan') {
             content.innerHTML = `
@@ -47,7 +46,6 @@ function showSlide(slide) {
     }, 300);
 }
 
-// Tampilkan halaman Home saat load
 window.addEventListener('DOMContentLoaded', () => {
     showSlide('home');
 });
