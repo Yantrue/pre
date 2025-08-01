@@ -91,6 +91,10 @@ body {
   color: #007BFF;
 }
 
+.nav-item.active {
+  color: #FFDD57;
+}
+
 /* Slider bar indicator bawah menu */
 #slider-indicator {
   position: absolute;
@@ -157,5 +161,45 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  .header-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 36px;
+    order: 1;
+    width: 100%;
+    text-align: center;
+    animation: slideInFromLeft 0.8s ease forwards;
+  }
+
+  .nav-menu {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    font-size: 16px;
+    position: relative;
+  }
+
+  /* Slider bar tetap di bawah menu */
+  #slider-indicator {
+    bottom: -5px;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 20px;
   }
 }
