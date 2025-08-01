@@ -1,4 +1,3 @@
-const titleElement = document.getElementById('title-typing');
 const slides = document.querySelectorAll('.nav-item');
 const sliderIndicator = document.getElementById('slider-indicator');
 const content = document.getElementById('content');
@@ -6,10 +5,9 @@ const content = document.getElementById('content');
 let currentSlide = 'home'; // default
 
 function showSlide(slide) {
-  // Set currentSlide
   currentSlide = slide;
 
-  // Highlight active nav item
+  // Set active nav item styling
   slides.forEach(item => {
     if(item.dataset.slide === slide) {
       item.classList.add('active');
@@ -20,14 +18,14 @@ function showSlide(slide) {
 
   moveSliderIndicator();
 
-  // Animasi fade out
+  // Fade out animation for content
   content.classList.add('fade-out');
 
   setTimeout(() => {
-    // Reset class konten
+    // Reset content class
     content.className = 'content';
 
-    // Isi konten sesuai slide
+    // Set content for each slide
     if(slide === 'pengenalan'){
       content.innerHTML = `
         <h2>Pengenalan Materi</h2>
@@ -49,14 +47,14 @@ function showSlide(slide) {
       `;
     }
 
-    // Animasi fade in
+    // Fade in animation for content
     content.classList.add('fade-in');
     setTimeout(() => content.classList.remove('fade-in'), 400);
 
   }, 300);
 }
 
-// Fungsi geser slider bar animasi ke item aktif
+// Function to move slider bar under active nav item smoothly
 function moveSliderIndicator(){
   const activeItem = document.querySelector('.nav-item.active');
   if(!activeItem) return;
@@ -65,7 +63,7 @@ function moveSliderIndicator(){
   const navRect = navMenu.getBoundingClientRect();
   const itemRect = activeItem.getBoundingClientRect();
 
-  // Hitung posisi relatif slider terhadap navMenu
+  // Calculate relative position and width
   const left = itemRect.left - navRect.left;
   const width = itemRect.width;
 
