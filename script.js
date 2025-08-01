@@ -1,38 +1,24 @@
-// Efek ketik berulang di judul
-const titleText = "Myukun";
-let i = 0;
-let forward = true;
+// Efek ketik judul hanya sampai huruf "M"
+const titleElement = document.getElementById('typed-title');
+let titleText = "M";
+let index = 0;
 
-function typeLoop() {
-    const titleElement = document.getElementById('typed-title');
-
-    if (forward) {
-        titleElement.textContent = titleText.slice(0, i++);
-        if (i > titleText.length) {
-            forward = false;
-            setTimeout(typeLoop, 1000); // jeda sebelum hapus
-            return;
-        }
-    } else {
-        titleElement.textContent = titleText.slice(0, i--);
-        if (i < 0) {
-            forward = true;
-        }
+function typeTitleOnce() {
+    if (index <= titleText.length) {
+        titleElement.textContent = titleText.slice(0, index++);
+        setTimeout(typeTitleOnce, 200);
     }
-
-    setTimeout(typeLoop, 150);
 }
+typeTitleOnce(); // langsung jalankan saat page load
 
-typeLoop(); // mulai efek ketik judul
-
-// Fungsi untuk mengganti konten dengan animasi per jenis
+// Fungsi menampilkan konten dengan efek animasi tergantung slide
 function showSlide(slide) {
     const content = document.getElementById('content');
 
     content.classList.add('fade-out');
 
     setTimeout(() => {
-        content.className = 'content'; // reset class agar animasi bisa diputar ulang
+        content.className = 'content'; // reset class agar animasi bisa diulang
 
         if (slide === 'pengenalan') {
             content.innerHTML = `
@@ -56,9 +42,13 @@ function showSlide(slide) {
         }
 
         content.classList.add('fade-in');
-
         setTimeout(() => {
             content.classList.remove('fade-in');
         }, 400);
     }, 300);
 }
+
+// Langsung tampilkan halaman "home" saat load
+window.addEventListener('DOMContentLoaded', () => {
+    showSlide('home');
+});
