@@ -37,11 +37,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Ini supaya sisa teks "yukun" tidak hilang tapi invisible */
-#hidden-rest {
-    visibility: hidden;
-}
-
 /* Kursor "_" untuk judul */
 .underscore-cursor {
     display: inline-block;
