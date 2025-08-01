@@ -1,5 +1,5 @@
 const titleElement = document.getElementById('typed-title');
-const titleText = "yukun"; // animasi ketik hanya untuk 'yukun'
+const titleText = "yukun";
 let index = 0;
 
 function typeTitleOnce() {
@@ -12,11 +12,22 @@ typeTitleOnce();
 
 function showSlide(slide) {
     const content = document.getElementById('content');
+    const slides = document.querySelectorAll('.slide');
+
+    // Hapus class active semua slide
+    slides.forEach(s => s.classList.remove('active'));
+
+    // Tambah class active ke slide yg dipilih
+    slides.forEach(s => {
+        if(s.textContent.toLowerCase().includes(slide)) {
+            s.classList.add('active');
+        }
+    });
 
     content.classList.add('fade-out');
 
     setTimeout(() => {
-        content.className = 'content'; // reset class
+        content.className = 'content'; // reset class ke default dengan border
 
         if (slide === 'pengenalan') {
             content.innerHTML = `
