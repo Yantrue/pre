@@ -34,7 +34,7 @@ function showSlide(slide) {
     } else if(slide === 'home'){
       content.innerHTML = `
         <h2 class="typing-text">Home</h2>
-        <p class="typing-text">Selamat datang di halaman utama presentasi Myukun!</p>
+        <p class="typing-text">Selamat datang di presentasi Myukun!</p>
       `;
     } else if(slide === 'siswa'){
       content.innerHTML = `
