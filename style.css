@@ -1,25 +1,44 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+/* CSS RESET */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.5s, color 0.5s;
+    padding: 40px;
     text-align: center;
 }
 
-.container {
-    padding: 40px;
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --content-bg: #f9f9f9;
+    --content-border: #cccccc;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --text: #ffffff;
+        --content-bg: #1e1e1e;
+        --content-border: #333333;
+    }
 }
 
 .title {
     font-size: 48px;
-    color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .slides {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     margin-bottom: 30px;
 }
 
@@ -29,18 +48,37 @@ body {
     color: white;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .slide:hover {
     background-color: #0056b3;
 }
 
-.content {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.content-container {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+}
+
+.content {
+    background-color: var(--content-bg);
+    border: 2px solid var(--content-border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.4s ease;
+}
+
+/* Animasi keluar dan masuk */
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
 }
