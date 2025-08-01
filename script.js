@@ -1,6 +1,5 @@
-// Efek ketik judul hanya sampai huruf "M"
 const titleElement = document.getElementById('typed-title');
-let titleText = "M";
+const titleText = "M"; // hanya M yang diketik
 let index = 0;
 
 function typeTitleOnce() {
@@ -9,9 +8,9 @@ function typeTitleOnce() {
         setTimeout(typeTitleOnce, 200);
     }
 }
-typeTitleOnce(); // langsung jalankan saat page load
+typeTitleOnce();
 
-// Fungsi menampilkan konten dengan efek animasi tergantung slide
+// Fungsi menampilkan konten dengan animasi
 function showSlide(slide) {
     const content = document.getElementById('content');
 
@@ -48,7 +47,7 @@ function showSlide(slide) {
     }, 300);
 }
 
-// Langsung tampilkan halaman "home" saat load
+// Tampilkan halaman Home saat load
 window.addEventListener('DOMContentLoaded', () => {
     showSlide('home');
 });
